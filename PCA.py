@@ -17,12 +17,12 @@ parser.add_option("-o", dest="output_file2", type='string', help="Output File co
 universe = mda.Universe(options.tpr_file ,options.xtc_file)
 backbone = universe.select_atoms('all')
 n_bb = len(backbone)
-print('There are {} backbone atoms in the analysis'.format(n_bb))
+#print('There are {} backbone atoms in the analysis'.format(n_bb))
 
 ################################################### Principle Component Analysis ###############################################
 
 analysis = pca.PCA(universe, select='all',align=False,n_components=None).run()
-print('Colums are the eigenvectors', analysis.p_components.shape)
+#print('Colums are the eigenvectors', analysis.p_components.shape)
 
 np.savetxt(options.output_file1, np.around(analysis.cumulated_variance[:20], 3), delimiter=",") # Save Cumulative varience data
 
