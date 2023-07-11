@@ -1,9 +1,4 @@
-'''
-Usage: python PCA.py -f traj.xtc -s structure.pdb -n 5 -c cumulative_varience.txt -o PCs.csv
-'''
-
-
-
+#!/usr/bin/python3
 
 import MDAnalysis as mda
 from MDAnalysis.analysis import pca, align
@@ -11,7 +6,7 @@ import numpy as np
 import pandas as pd
 import optparse
 
-parser = optparse.OptionParser("Usage: PCA.py [Options]")
+parser = optparse.OptionParser("Usage: python PCA.py -f traj.xtc -s structure.pdb -n 5 -c cumulative_varience.txt -o PCs.csv")
 parser.add_option("-f", dest="xtc_file", type='string', help="Input fitted trajectory file contains backbone atoms only in .xtc extension")
 parser.add_option("-s", dest="tpr_file", type='string', help="Input File containing topology info in .tpr extension")
 parser.add_option("-n", dest="n_comp", type='int', help="No. of Principle Components to save from analysis")
