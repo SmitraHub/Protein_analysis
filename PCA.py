@@ -1,3 +1,10 @@
+'''
+Usage: python PCA.py -f traj.xtc -s structure.pdb -n 5 -c cumulative_varience.txt -o PCs.csv
+'''
+
+
+
+
 import MDAnalysis as mda
 from MDAnalysis.analysis import pca, align
 import numpy as np
